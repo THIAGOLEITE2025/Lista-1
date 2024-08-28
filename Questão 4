@@ -1,0 +1,50 @@
+// Agora vamos trabalhar com vetores em Java. Siga as etapas abaixo:
+
+// 1. Primeiro, o programa deve criar um vetor de inteiros com espaço para 10 elementos.
+// 2. Em seguida, o programa deve solicitar ao usuário para preencher cada posição do vetor com um número inteiro.
+// 3. Uma vez preenchido, o programa deve percorrer o vetor, encontrar o maior número e imprimir esse número na tela.
+// 4. Em seguida, o programa deve encontrar o menor número e imprimi-lo na tela.
+
+
+
+
+
+
+
+
+
+
+import java.util.Scanner;
+
+public class VetorExemplo {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int[] vetor = new int[10];  // Criando um vetor de inteiros com espaço para 10 elementos
+
+        // Solicitando ao usuário para preencher o vetor com números inteiros
+        for (int i = 0; i < vetor.length; i++) {
+            System.out.print("Digite um número inteiro para a posição " + (i + 1) + ": ");
+            vetor[i] = scanner.nextInt();
+        }
+
+        // Encontrar o maior número no vetor
+        int maior = vetor[0];  // Inicializar com o primeiro elemento do vetor
+        for (int i = 1; i < vetor.length; i++) {
+            if (vetor[i] > maior) {
+                maior = vetor[i];
+            }
+        }
+        System.out.println("O maior número do vetor é: " + maior);
+
+        // Encontrar o menor número no vetor
+        int menor = vetor[0];  // Inicializar com o primeiro elemento do vetor
+        for (int i = 1; i < vetor.length; i++) {
+            if (vetor[i] < menor) {
+                menor = vetor[i];
+            }
+        }
+        System.out.println("O menor número do vetor é: " + menor);
+
+        scanner.close();  // Fechar o scanner para evitar vazamento de recursos
+    }
+}
