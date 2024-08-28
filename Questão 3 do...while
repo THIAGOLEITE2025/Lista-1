@@ -1,0 +1,34 @@
+//Nesta nova questão, vamos trabalhar com estruturas de repetição 'do...while' e 'for'. Siga os passos abaixo:
+
+//1. Primeiro, o programa deve solicitar ao usuário um número inteiro.
+//2. Depois, usando uma estrutura de repetição 'do...while', o programa deve continuar solicitando um número até que o usuário insira um número igual a zero.
+//3. Uma vez que um número válido foi fornecido, o programa deve usar uma estrutura de repetição 'for' para calcular e imprimir a tabuada desse número, de 1 a 10.
+//4. Imprima os resultados na tela.
+//5. Altere para a estrutura ‘while’. Observe a diferença!
+
+
+import java.util.Scanner;
+
+public class Tabuada {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int numero;
+
+        // Estrutura 'do...while' para solicitar um número até que o usuário insira zero
+        do {
+            System.out.print("Digite um número inteiro (ou 0 para sair): ");
+            numero = scanner.nextInt();
+        } while (numero == 0);
+
+        // Se o usuário não inseriu 0, calcular e imprimir a tabuada
+        if (numero != 0) {
+            System.out.println("Tabuada do " + numero + ":");
+            // Estrutura 'for' para calcular e imprimir a tabuada de 1 a 10
+            for (int i = 1; i <= 10; i++) {
+                System.out.println(numero + " x " + i + " = " + (numero * i));
+            }
+        }
+
+        scanner.close();
+    }
+}
