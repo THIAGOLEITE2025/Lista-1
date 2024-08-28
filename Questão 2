@@ -1,0 +1,68 @@
+//Agora, faça uma extensão do programa anterior com os seguintes passos:
+
+//1. Solicite ao usuário que escolha uma das seguintes opções: 1 - Multiplicar os números, 2 - Dividir o primeiro número pelo segundo, 3 - Subtrair o segundo número do primeiro.
+//2. Implemente uma estrutura de decisão 'if-else' que verifica se a divisão é por zero e, em caso positivo, imprima uma mensagem de erro.
+//3. Implemente uma estrutura 'switch' que realiza a operação selecionada, levando em conta a verificação do passo anterior.
+//4. Imprima o resultado na tela, exceto no caso de uma divisão por zero.
+
+
+
+
+
+
+
+
+
+
+import java.util.Scanner;
+
+public class OperacoesNumeros {
+    public static void main(String[] args) {
+        // Criação do objeto Scanner para leitura de entrada do usuário
+        Scanner scanner = new Scanner(System.in);
+
+        // Solicita ao usuário que insira dois números inteiros
+        System.out.print("Insira o primeiro número inteiro: ");
+        int numero1 = scanner.nextInt();
+
+        System.out.print("Insira o segundo número inteiro: ");
+        int numero2 = scanner.nextInt();
+
+        // Exibe as opções de operações para o usuário
+        System.out.println("Escolha uma das seguintes opções:");
+        System.out.println("1 - Multiplicar os números");
+        System.out.println("2 - Dividir o primeiro número pelo segundo");
+        System.out.println("3 - Subtrair o segundo número do primeiro");
+
+        // Lê a escolha do usuário
+        int escolha = scanner.nextInt();
+
+        // Verifica se a escolha é válida e se não há divisão por zero
+        if (escolha == 2 && numero2 == 0) {
+            System.out.println("Erro: divisão por zero não é permitida.");
+        } else {
+            // Realiza a operação com base na escolha do usuário usando switch
+            switch (escolha) {
+                case 1:
+                    int produto = numero1 * numero2;
+                    System.out.println("O produto dos números é: " + produto);
+                    break;
+                case 2:
+                    // Divisão somente é realizada se número2 não for zero
+                    double divisao = (double) numero1 / numero2;
+                    System.out.println("A divisão do primeiro número pelo segundo é: " + divisao);
+                    break;
+                case 3:
+                    int subtracao = numero1 - numero2;
+                    System.out.println("A subtração do segundo número do primeiro é: " + subtracao);
+                    break;
+                default:
+                    System.out.println("Opção inválida. Por favor, escolha 1, 2 ou 3.");
+                    break;
+            }
+        }
+
+        // Fecha o scanner para evitar vazamento de recursos
+        scanner.close();
+    }
+}
